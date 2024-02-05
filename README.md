@@ -1,2 +1,8 @@
-# ex-concurrency-uikit-project
-비동기 코드를 UIKit에서 구현하는 방법을 연습합니다.
+# Ex-Concurrency-UIKit-Project
+## 🍎Overview
+`프로젝트` Ex-Concurrency-UIKit-Project <br>
+`게시일자` 2024년 2월 5일(월) <br>
+
+## 👩🏻‍💻Reference
+
+* J.D Gauchat, ⌜UIKit for Masterminds(iOS15)⌟, P.515~525
