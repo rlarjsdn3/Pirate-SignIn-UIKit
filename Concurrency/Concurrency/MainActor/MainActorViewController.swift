@@ -8,22 +8,24 @@
 import UIKit
 
 class MainActorViewController: UIViewController {
-
+    @IBOutlet weak var myLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        Task(priority: .background) {
+            await loadImage(name: "image1")
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // ⭐️ 메서드에 포함된 코드가 메인 쓰레드에서 실행되는 걸 보장해줌
+    @MainActor func loadImage(name: String) async {
+//        myLabel.text = name
+        // ⭐️ 전체 코드 중 일부만 메인 쓰레드에서 실행되어야 한다면 run() 메서드 사용함
+        let labelText: String = await MainActor.run {
+            let text = myLabel.text
+            return text ?? ""
+        }
+        print(labelText)
     }
-    */
 
 }
