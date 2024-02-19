@@ -11,19 +11,29 @@ class TaskGroupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        Task(priority: .background) {
+            try await withThrowingTaskGroup(of: String.self) { group in
+                group.addTask(priority: .background) {
+                    let imageName = try? await self.loadImage(name: "image1")
+                    return imageName ?? ""
+                }
+                group.addTask(priority: .background) {
+                    let imageName = try? await self.loadImage(name: "image2")
+                    return imageName ?? ""
+                }
+                group.addTask(priority: .background) {
+                    let imageName = try? await self.loadImage(name: "image3")
+                    return imageName ?? ""
+                }
+                for try await result in group {
+                    print(result)
+                }
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func loadImage(name: String) async throws -> String {
+        try await Task.sleep(nanoseconds: 3 * 1_000_000_000)
+        return "Name: \(name)"
     }
-    */
-
 }
