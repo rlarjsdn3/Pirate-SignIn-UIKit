@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol SampleButtonViewDelegate: AnyObject {
-    
+protocol PrimaryButtonDelegate: AnyObject {
+
     /// PrimaryButton이 탭되었을 때 호출됩니다.
     /// - Parameter button: 탭된 PrimaryButton 인스턴스
-    func sampleButtonTapped(_ button: PrimaryButton)
+    func primaryButtonDidTapped(_ button: PrimaryButton)
 }
 
 /// 커스터마이징 가능한 버튼을 제공하는 뷰입니다.
@@ -49,7 +49,7 @@ final class PrimaryButton: NibView {
     @IBOutlet var button: UIButton!
     
     /// 버튼의 탭 이벤트를 처리할 델리게이트 객체입니다.
-    weak var delegate: SampleButtonViewDelegate?
+    weak var delegate: PrimaryButtonDelegate?
 
     /// 코드로 초기화할 때 호출되는 초기화 메서드입니다.
     override init(frame: CGRect) {
@@ -66,7 +66,7 @@ final class PrimaryButton: NibView {
     /// 버튼이 탭되었을 때 호출되는 액션 메서드입니다.
     /// 델리게이트에게 탭 이벤트를 전달합니다.
     @IBAction func buttonTapped(_ sender: Any) {
-        delegate?.sampleButtonTapped(self)
+        delegate?.primaryButtonDidTapped(self)
     }
 }
 

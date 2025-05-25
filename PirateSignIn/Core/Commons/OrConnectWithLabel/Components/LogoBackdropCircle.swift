@@ -6,37 +6,92 @@
 //
 
 import UIKit
-
+/// 소셜 로그인 버튼 등에 사용되는 원형 배경 이미지 뷰입니다.
+/// 배경 색상과 이미지의 틴트 색을 설정할 수 있으며, 가운데 이미지가 중심 정렬되고 크기가 조절됩니다.
 final class LogoBackdropCircle: NibView {
-    
-    let imageView = UIImageView()
-    
-    convenience init(resource: ImageResource) {
-        self.init(frame: .zero)
-        imageView.image = UIImage(resource: resource)
+
+    /// 표시할 이미지의 이름입니다. 설정 시 항상 `.alwaysTemplate` 렌더링 모드로 적용됩니다.
+    var imageName: String = "" {
+        didSet { setImage(withAlwaysTemplate: imageName) }
     }
-    
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        
-        let ovalIn = UIBezierPath(ovalIn: rect)
-        
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = ovalIn.cgPath
-        shapeLayer.frame = rect
-        shapeLayer.fillColor = UIColor._pirateLightBlue.cgColor
-        
-        self.layer.addSublayer(shapeLayer)
+
+    /// 이미지의 틴트 색상입니다. 버튼이나 상위 뷰의 `tintColor`에 따라 반응합니다.
+    override var tintColor: UIColor? {
+        didSet { imageView.tintColor = tintColor }
+    }
+
+    /// 배경에 그림자나 장식 효과를 추가할 때 사용할 `CAShapeLayer`입니다.
+    private var shadowLayer: CAShapeLayer? = nil
+
+    /// 이미지가 포함될 배경 뷰입니다. 기본적으로 원형이고 밝은 파란색 배경이 적용됩니다.
+    let backdropView = UIView()
+
+    /// 가운데 표시되는 이미지 뷰입니다.
+    let imageView = UIImageView()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        addSubview(backdropView)
+        backdropView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            backdropView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            backdropView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            backdropView.topAnchor.constraint(equalTo: self.topAnchor),
+            backdropView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+        backdropView.apply {
+            $0.layer.cornerRadius = frame.height / 2
+            $0.layer.masksToBounds = true
+            $0.backgroundColor = ._pirateLightBlue
+        }
+
+        backdropView.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.55),
+            imageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.55),
+            imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
+        imageView.apply {
+            $0.contentMode = .scaleAspectFit
+            $0.image = $0.image?.withRenderingMode(.alwaysTemplate)
+        }
+
+        // TODO: - 이미지에 그림자 Layer 추가하기
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        backdropView.layer.cornerRadius = frame.height / 2
+    }
+}
+
+extension LogoBackdropCircle {
+
+    /// 주어진 이미지 이름을 통해 이미지를 설정하고 `.alwaysTemplate` 렌더링 모드로 지정합니다.
+    /// - Parameter name: Asset Catalog에 등록된 이미지 이름
+    func setImage(withAlwaysTemplate name: String) {
+        imageView.image = UIImage(named: name)?.withRenderingMode(.alwaysTemplate)
     }
 }
 
 
 #Preview(traits: .fixedLayout(width: 100, height: 100)) {
-    LogoBackdropCircle(
+    let logo = LogoBackdropCircle(
         frame: .init(
             x: 0, y: 0,
             width: 100,
             height: 100
         )
     )
+    logo.imageName = "facebook"
+    logo.tintColor = .systemBackground
+    return logo
 }
