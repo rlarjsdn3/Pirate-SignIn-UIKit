@@ -12,27 +12,30 @@ import UIKit
 enum PirateFont: Int {
     
     /// 온보딩 화면의 타이틀에 사용되는 폰트
-    case title = 0
-    /// 로그인 및 회원가입 화면의 타이틀에 사용되는 폰트
-    case title2
+    case title      = 0
+    /// 주요 버튼의 타이틀에 사용되는 폰
+    case title2     = 1
     /// 텍스트 필드의 플레이스홀더에 사용되는 폰트
-    case title3
-    /// 주요 버튼의 타이틀에 사용되는 폰트
-    case headline
+    case title3     = 2
+    /// 로그인 및 회원가입 화면의 타이틀에 사용되는 폰트
+    case headline   = 3
     /// 비밀번호 찾기 등 부가 텍스트에 사용되는 폰트
-    case footnote
+    case footnote   = 4
     /// 기타 설명 등에 사용되는 캡션 폰트
-    case caption
-    
+    case caption    = 5
+    /// 기타 설명 등에 사용되는 볼드 캡션 폰트
+    case caption2   = 6
+
     /// 각 케이스에 해당하는 `UIFont`를 반환합니다.
     var fount: UIFont {
         switch self {
-        case .title:    return UIFont.systemFont(ofSize: 24, weight: .bold)
-        case .title2:   return UIFont.systemFont(ofSize: 20, weight: .bold)
+        case .title:    return UIFont.systemFont(ofSize: 28, weight: .semibold)
+        case .title2:   return UIFont.systemFont(ofSize: 20, weight: .semibold)
         case .title3:   return UIFont.systemFont(ofSize: 18)
-        case .headline: return UIFont.systemFont(ofSize: 17, weight: .bold)
-        case .footnote: return UIFont.systemFont(ofSize: 16)
-        case .caption:  return UIFont.systemFont(ofSize: 14)
+        case .headline: return UIFont.systemFont(ofSize: 18, weight: .semibold)
+        case .footnote: return UIFont.systemFont(ofSize: 14)
+        case .caption:  return UIFont.systemFont(ofSize: 12)
+        case .caption2: return UIFont.systemFont(ofSize: 12, weight: .bold)
         }
     }
     

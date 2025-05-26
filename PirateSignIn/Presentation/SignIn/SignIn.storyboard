@@ -3,28 +3,193 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" id="Y6W-OH-hqX" customClass="SignInViewController" customModule="PirateSignIn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YoM-us-qFI" customClass="PrimaryButton" customModule="PirateSignIn" customModuleProvider="target">
+                                <rect key="frame" x="48" y="551" width="297" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gY8-77-24J"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Log in"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFont">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="baseBackgroundColor">
+                                        <color key="value" name="PirateBlue"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="baseForegroundColor">
+                                        <color key="value" systemColor="systemBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0g-Jl-tyk" customClass="HaveAccountButton" customModule="PirateSignIn" customModuleProvider="target">
+                                <rect key="frame" x="58" y="616" width="277" height="15"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Cc1-WE-k4x"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Don't have an account?"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFont">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" systemColor="labelColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="Sign Up"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonTitleFont">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nT-qV-7uA" customClass="OrConnectWithLabel" customModule="PirateSignIn" customModuleProvider="target">
+                                <rect key="frame" x="76.666666666666686" y="658.66666666666663" width="240" height="125.33333333333337"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="cng-2E-tM8"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="steering-wheel" translatesAutoresizingMaskIntoConstraints="NO" id="jVs-76-OeO">
+                                <rect key="frame" x="156.66666666666666" y="147" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="dPE-57-7pf"/>
+                                    <constraint firstAttribute="width" constant="80" id="xxL-UV-Vu3"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xU7-Ej-8Ug" customClass="SignInLabel" customModule="PirateSignIn" customModuleProvider="target">
+                                <rect key="frame" x="48" y="302" width="297" height="45"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="dCt-Jx-Xib"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Login In Now"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="subtitle" value="Please login to continue using our app"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" name="PirateBlue"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFont">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="descriptionFont">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="clZ-Qf-EEF">
+                                <rect key="frame" x="48" y="387" width="297" height="107"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQa-qD-kwW" customClass="SignInTextField" customModule="PirateSignIn" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="297" height="47.666666666666664"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47.5" id="8UO-bE-MEq"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureField" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAE-eZ-1zd" customClass="SignInTextField" customModule="PirateSignIn" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="59.666666666666686" width="297" height="47.333333333333343"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47.5" id="p8b-8s-cfQ"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureField" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="KAE-eZ-1zd" secondAttribute="trailing" id="54D-dO-T5h"/>
+                                    <constraint firstItem="KAE-eZ-1zd" firstAttribute="leading" secondItem="clZ-Qf-EEF" secondAttribute="leading" id="IJP-7I-kcp"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99f-E7-GGf">
+                                <rect key="frame" x="233" y="502" width="112" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Forgot Password"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8nT-qV-7uA" firstAttribute="top" secondItem="F0g-Jl-tyk" secondAttribute="bottom" constant="27.5" id="3bJ-Q2-hfm"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="8nT-qV-7uA" secondAttribute="bottom" id="4Ex-IZ-34y"/>
+                            <constraint firstItem="YoM-us-qFI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="48" id="7bp-SY-EtA"/>
+                            <constraint firstItem="clZ-Qf-EEF" firstAttribute="trailing" secondItem="YoM-us-qFI" secondAttribute="trailing" id="9h4-Cj-Vxc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="F0g-Jl-tyk" secondAttribute="trailing" constant="58" id="BIL-4O-xGe"/>
+                            <constraint firstItem="clZ-Qf-EEF" firstAttribute="trailing" secondItem="99f-E7-GGf" secondAttribute="trailing" id="DTN-ht-676"/>
+                            <constraint firstItem="clZ-Qf-EEF" firstAttribute="leading" secondItem="xU7-Ej-8Ug" secondAttribute="leading" id="E0X-EG-eSl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YoM-us-qFI" secondAttribute="trailing" constant="48" id="LKW-BI-wOw"/>
+                            <constraint firstItem="F0g-Jl-tyk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="58" id="NcC-aA-Jvy"/>
+                            <constraint firstItem="F0g-Jl-tyk" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="OL4-Me-cVS"/>
+                            <constraint firstItem="8nT-qV-7uA" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="PWE-so-vg8"/>
+                            <constraint firstItem="YoM-us-qFI" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="PkI-I5-9yO"/>
+                            <constraint firstItem="jVs-76-OeO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="QgD-si-Qie"/>
+                            <constraint firstItem="clZ-Qf-EEF" firstAttribute="trailing" secondItem="xU7-Ej-8Ug" secondAttribute="trailing" id="RPJ-my-jPT"/>
+                            <constraint firstItem="clZ-Qf-EEF" firstAttribute="top" secondItem="xU7-Ej-8Ug" secondAttribute="bottom" constant="40" id="WCe-cs-LUK"/>
+                            <constraint firstItem="F0g-Jl-tyk" firstAttribute="top" secondItem="YoM-us-qFI" secondAttribute="bottom" constant="15" id="XcW-ed-J3R"/>
+                            <constraint firstItem="YoM-us-qFI" firstAttribute="top" secondItem="99f-E7-GGf" secondAttribute="bottom" constant="20" id="ZQ1-z4-NfN"/>
+                            <constraint firstItem="YoM-us-qFI" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="150" id="bPj-8h-ncM"/>
+                            <constraint firstItem="xU7-Ej-8Ug" firstAttribute="top" secondItem="jVs-76-OeO" secondAttribute="bottom" constant="75" id="qjV-r6-alc"/>
+                            <constraint firstItem="clZ-Qf-EEF" firstAttribute="leading" secondItem="YoM-us-qFI" secondAttribute="leading" id="sCG-Pt-Rdb"/>
+                            <constraint firstItem="99f-E7-GGf" firstAttribute="top" secondItem="clZ-Qf-EEF" secondAttribute="bottom" constant="8" symbolic="YES" id="sPB-dv-V1U"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="qQa-qD-kwW" id="qDf-zA-3Lq"/>
+                        <outlet property="haveAccountLabel" destination="F0g-Jl-tyk" id="Dw2-1B-gHQ"/>
+                        <outlet property="imageView" destination="jVs-76-OeO" id="6kA-zK-MB7"/>
+                        <outlet property="orConnectLabel" destination="8nT-qV-7uA" id="eoA-Pa-Q4C"/>
+                        <outlet property="passwordField" destination="KAE-eZ-1zd" id="y4C-6P-vYs"/>
+                        <segue destination="0b8-8j-BzO" kind="presentation" identifier="SignInToSignUp" modalPresentationStyle="fullScreen" id="83e-a7-zwe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="4"/>
+            <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
+        </scene>
+        <!--SignUpViewController-->
+        <scene sceneID="j1H-Bk-G41">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignUp" referencedIdentifier="SignUpViewController" id="0b8-8j-BzO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="0rd-z9-J3c"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aFi-E9-PPj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780" y="4"/>
         </scene>
     </scenes>
     <resources>
+        <image name="steering-wheel" width="256" height="256"/>
+        <namedColor name="PirateBlue">
+            <color red="0.030999999493360519" green="0.22699999809265137" blue="0.49799999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

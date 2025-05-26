@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,18 +12,120 @@
         <!--Onboarding View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="OnboardingViewController" customModule="PirateSignIn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" id="Y6W-OH-hqX" customClass="OnboardingViewController" customModule="PirateSignIn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="steering-wheel" translatesAutoresizingMaskIntoConstraints="NO" id="fR3-tg-1MB">
+                                <rect key="frame" x="106.66666666666669" y="196" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="24v-kO-sM5"/>
+                                    <constraint firstAttribute="width" constant="180" id="fXr-0M-BOX"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Grn-Mx-63v" customClass="PrimaryButton" customModule="PirateSignIn" customModuleProvider="target">
+                                <rect key="frame" x="24" y="551" width="345" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="912-Ne-ueg"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Get Started"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFont">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="baseBackgroundColor">
+                                        <color key="value" name="PirateBlue"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="baseForegroundColor">
+                                        <color key="value" systemColor="systemBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9u-Q0-7W8" customClass="HaveAccountButton" customModule="PirateSignIn" customModuleProvider="target">
+                                <rect key="frame" x="58" y="616" width="277" height="15"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="RTv-g5-xrz"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Do you have an account?"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFont">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" systemColor="labelColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="Log in"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonTitleFont">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eib-ja-WNk" customClass="SignInLabel" customModule="PirateSignIn" customModuleProvider="target">
+                                <rect key="frame" x="50" y="426" width="293" height="75"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="7k0-Jt-Gws"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Welcome To"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="subtitle" value="Create an account and access thousand of cool sutffs"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" name="PirateBlue"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFont">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="descriptionFont">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eib-ja-WNk" firstAttribute="top" secondItem="fR3-tg-1MB" secondAttribute="bottom" constant="50" id="4WP-8l-ZZD"/>
+                            <constraint firstItem="eib-ja-WNk" firstAttribute="top" secondItem="fR3-tg-1MB" secondAttribute="bottom" constant="50" id="7k5-RG-Bff"/>
+                            <constraint firstItem="Grn-Mx-63v" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="9PL-dB-5ty"/>
+                            <constraint firstItem="Grn-Mx-63v" firstAttribute="top" secondItem="eib-ja-WNk" secondAttribute="bottom" constant="50" id="DvG-iU-T9k"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="c9u-Q0-7W8" secondAttribute="trailing" constant="58" id="Jx4-nQ-Tkf"/>
+                            <constraint firstItem="Grn-Mx-63v" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="150" id="Qpk-gO-oFL"/>
+                            <constraint firstItem="fR3-tg-1MB" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Rhd-L8-T3u"/>
+                            <constraint firstItem="c9u-Q0-7W8" firstAttribute="top" secondItem="Grn-Mx-63v" secondAttribute="bottom" constant="15" id="SlK-Af-goW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eib-ja-WNk" secondAttribute="trailing" constant="50" id="TSo-wc-FqT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Grn-Mx-63v" secondAttribute="trailing" constant="24" id="VDr-uX-YnB"/>
+                            <constraint firstItem="c9u-Q0-7W8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="58" id="eCO-y0-dCQ"/>
+                            <constraint firstItem="Grn-Mx-63v" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="sLN-Fb-crU"/>
+                            <constraint firstItem="eib-ja-WNk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="spb-ey-1eh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ncq-LH-NG1"/>
+                    <connections>
+                        <outlet property="getStartedButton" destination="Grn-Mx-63v" id="xSz-ca-x1X"/>
+                        <outlet property="imageView" destination="fR3-tg-1MB" id="cXF-X3-YyX"/>
+                        <outlet property="loginButton" destination="c9u-Q0-7W8" id="3De-aM-ThR"/>
+                        <segue destination="teC-DB-mqV" kind="show" identifier="OnboardingToSignIn" id="vTm-8V-TV5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1159.5419847328244" y="-11.267605633802818"/>
+        </scene>
+        <!--SignInViewController-->
+        <scene sceneID="4fM-ng-mvW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignIn" referencedIdentifier="SignInViewController" id="teC-DB-mqV" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="jFT-yl-dsI"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9V-Au-HsW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1815" y="-11"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fxi-oT-R5S">
@@ -43,6 +146,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="steering-wheel" width="256" height="256"/>
+        <namedColor name="PirateBlue">
+            <color red="0.030999999493360519" green="0.22699999809265137" blue="0.49799999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

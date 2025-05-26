@@ -55,13 +55,12 @@ extension OrConnectWithLabel {
     }
 
     private func createSocialSignInButton(_ signInType: SocialSignInButton.SignInType) -> UIButton {
-        let button = SocialSignInButton().apply {
+        return SocialSignInButton().apply {
             $0.signInType = signInType
             $0.tintColor = .white
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.widthAnchor.constraint(equalTo: $0.heightAnchor, multiplier: 1.0).isActive = true
             $0.addTarget(self, action: #selector(didTapSocialSignInButton), for: .touchUpInside)
         }
-        return button
     }
 }

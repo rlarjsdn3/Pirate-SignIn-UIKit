@@ -20,10 +20,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8IO-P2-l1p">
-                    <rect key="frame" x="0.0" y="0.0" width="381" height="68"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="68"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cGD-OM-Gyn">
-                            <rect key="frame" x="24" y="0.0" width="357" height="68"/>
+                            <rect key="frame" x="24" y="0.0" width="363" height="68"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                         </textField>
@@ -31,7 +31,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="cGD-OM-Gyn" secondAttribute="bottom" id="1EJ-vE-btk"/>
-                        <constraint firstAttribute="trailing" secondItem="cGD-OM-Gyn" secondAttribute="trailing" id="oI7-ar-lHh"/>
+                        <constraint firstAttribute="trailing" secondItem="cGD-OM-Gyn" secondAttribute="trailing" constant="6" id="VgI-bR-pd9"/>
                         <constraint firstItem="cGD-OM-Gyn" firstAttribute="top" secondItem="8IO-P2-l1p" secondAttribute="top" id="qmD-JR-6XM"/>
                         <constraint firstItem="cGD-OM-Gyn" firstAttribute="leading" secondItem="8IO-P2-l1p" secondAttribute="leading" constant="24" id="zkc-yX-WSn"/>
                     </constraints>
@@ -40,7 +40,7 @@
             <viewLayoutGuide key="safeArea" id="wCD-pH-1Er"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="8IO-P2-l1p" secondAttribute="trailing" constant="12" id="8Yc-uA-0N0"/>
+                <constraint firstAttribute="trailing" secondItem="8IO-P2-l1p" secondAttribute="trailing" id="8Yc-uA-0N0"/>
                 <constraint firstItem="8IO-P2-l1p" firstAttribute="top" secondItem="0o2-yI-f5P" secondAttribute="top" id="DxW-Uf-dS1"/>
                 <constraint firstAttribute="bottom" secondItem="8IO-P2-l1p" secondAttribute="bottom" id="Vck-lF-E6J"/>
                 <constraint firstItem="8IO-P2-l1p" firstAttribute="leading" secondItem="0o2-yI-f5P" secondAttribute="leading" id="qwl-xL-bZE"/>

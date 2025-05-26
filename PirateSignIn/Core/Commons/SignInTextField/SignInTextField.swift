@@ -39,9 +39,16 @@ final class SignInTextField: NibView {
     }
 
     private func setupInputField() {
-        container.layer.cornerRadius = 12
-        container.layer.masksToBounds = true
-        container.layer.borderWidth = 1.25
-        container.layer.borderColor = UIColor.systemGray4.cgColor
+        container.apply {
+            $0.layer.cornerRadius = 12
+            $0.layer.masksToBounds = true
+            $0.layer.borderWidth = 1.25
+            $0.layer.borderColor = UIColor.systemGray.cgColor
+        }
+
+        inputField.apply {
+            $0.textColor = .systemGray
+            $0.tintColor = .systemGray
+        }
     }
 }

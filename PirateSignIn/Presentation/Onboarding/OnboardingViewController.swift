@@ -9,11 +9,33 @@ import UIKit
 
 final class OnboardingViewController: CoreViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var getStartedButton: PrimaryButton!
+    @IBOutlet weak var loginButton: HaveAccountButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        loginButton.delegate = self
     }
 
+    override func setupUI() {
+        super.setupUI()
+    }
 
+    override func setupAttributes() {
+        super.setupAttributes()
+
+        imageView.apply {
+            $0.tintColor = ._pirateBlue
+            $0.setImage(withAlwaysTemplate: "steering-wheel")
+        }
+    }
 }
 
+extension OnboardingViewController: HaveAccountButtonDelegate {
+
+    func haveAccountDidTapLoginButton(_ button: UIButton) {
+        performSegue(withIdentifier: "OnboardingToSignIn", sender: nil)
+    }
+}

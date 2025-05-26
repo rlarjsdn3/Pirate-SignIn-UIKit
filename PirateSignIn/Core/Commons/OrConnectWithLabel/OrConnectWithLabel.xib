@@ -22,15 +22,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="253" height="75"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or connect with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oW9-hs-V9M">
-                            <rect key="frame" x="0.0" y="0.0" width="253" height="17"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <rect key="frame" x="0.0" y="0.0" width="253" height="14.333333333333334"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ea8-1B-zZC">
-                            <rect key="frame" x="24" y="45" width="205" height="30"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ea8-1B-zZC">
+                            <rect key="frame" x="86.666666666666671" y="28.333333333333329" width="80.000000000000014" height="22"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="pZx-Gr-pKF"/>
+                                <constraint firstAttribute="width" constant="80" id="jkY-0f-eQQ"/>
+                                <constraint firstAttribute="height" constant="22" id="pZx-Gr-pKF"/>
                             </constraints>
                         </stackView>
                     </subviews>
@@ -38,10 +39,9 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="oW9-hs-V9M" secondAttribute="trailing" id="AnM-z3-W4v"/>
                         <constraint firstItem="oW9-hs-V9M" firstAttribute="leading" secondItem="zsp-BM-wJg" secondAttribute="leading" id="J6E-eb-SDJ"/>
-                        <constraint firstAttribute="trailing" secondItem="ea8-1B-zZC" secondAttribute="trailing" constant="24" id="afg-a1-Pqf"/>
                         <constraint firstItem="oW9-hs-V9M" firstAttribute="top" secondItem="zsp-BM-wJg" secondAttribute="top" id="dAC-7A-I97"/>
-                        <constraint firstAttribute="bottom" secondItem="ea8-1B-zZC" secondAttribute="bottom" id="rMe-1E-RCp"/>
-                        <constraint firstItem="ea8-1B-zZC" firstAttribute="leading" secondItem="zsp-BM-wJg" secondAttribute="leading" constant="24" id="xjw-OE-Ef2"/>
+                        <constraint firstItem="ea8-1B-zZC" firstAttribute="top" secondItem="oW9-hs-V9M" secondAttribute="bottom" constant="14" id="ddy-FP-DHX"/>
+                        <constraint firstItem="ea8-1B-zZC" firstAttribute="centerX" secondItem="oW9-hs-V9M" secondAttribute="centerX" id="rDC-t6-bcI"/>
                     </constraints>
                 </view>
             </subviews>

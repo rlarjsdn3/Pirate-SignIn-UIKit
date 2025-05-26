@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol HaveAccountButtonDelegate: AnyObject {
+
+    ///
+    func haveAccountDidTapLoginButton(_ button: UIButton)
+}
+
 /// 회원가입 화면 등에서 "Do You Have an account?" 문구와 로그인 버튼을 함께 표시하는 커스텀 뷰입니다.
 ///
 /// - Note: `signInButton`의 스타일이 `.plain`일 경우, `titleLabel?.font`를 직접 설정해도 적용되지 않을 수 있습니다.
@@ -47,7 +53,10 @@ final class HaveAccountButton: NibView {
     
     /// 로그인 버튼 아웃렛입니다.
     @IBOutlet weak var signInButton: UIButton!
-    
+
+    ///
+    weak var delegate: (any HaveAccountButtonDelegate)?
+
     /// 코드로 초기화할 때 호출되는 초기화 메서드입니다.
     /// - Parameter frame: 뷰의 프레임
     override init(frame: CGRect) {
@@ -60,5 +69,19 @@ final class HaveAccountButton: NibView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadFromNib(owner: self)
+
+        setupSignInButton()
+    }
+
+    private func setupSignInButton() {
+        signInButton.addTarget(
+            self,
+            action: #selector(didTapLoginButton),
+            for: .touchUpInside
+        )
+    }
+
+    @objc private func didTapLoginButton(_ sender: UIButton) {
+        delegate?.haveAccountDidTapLoginButton(sender)
     }
 }
