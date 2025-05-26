@@ -9,6 +9,7 @@ import UIKit
 
 /// 다양한 소셜 플랫폼(Facebook, Twitter, LinkedIn)에 대응하는 커스텀 로그인 버튼입니다.
 /// 내부에 원형 로고 뷰(`LogoBackdropCircle`)를 포함하며, 버튼의 상태에 따라 하이라이트 효과를 적용할 수 있습니다.
+@IBDesignable
 final class SocialSignInButton: UIButton {
 
     /// 소셜 로그인 버튼의 종류를 나타내는 열거형입니다.

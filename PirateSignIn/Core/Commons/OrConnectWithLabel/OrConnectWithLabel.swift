@@ -20,6 +20,7 @@ protocol OrConnectWithLabelDelegate: AnyObject {
     )
 }
 
+@IBDesignable
 final class OrConnectWithLabel: NibView {
     
     @IBOutlet weak var socialButtonStack: UIStackView!
