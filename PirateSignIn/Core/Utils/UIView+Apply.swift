@@ -9,7 +9,7 @@ import UIKit
 
 protocol Apply { }
 
-extension Apply where Self: UIView {
+extension Apply {
 
     /// 뷰를 구성하기 위한 설정 핸들러를 받아 즉시 구성 작업을 수행합니다.
     /// - Parameter configurationHandler: 현재 뷰(Self)를 인자로 받아 원하는 설정을 적용하는 클로저입니다.

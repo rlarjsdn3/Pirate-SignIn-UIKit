@@ -24,10 +24,6 @@ final class SignUpViewController: CoreViewController {
         passwordField.inputField.delegate = self
         haveAccountLabel.delegate = self
     }
-    
-    override func setupUI() {
-        super.setupUI()
-    }
 
     override func setupAttributes() {
         super.setupAttributes()
@@ -44,6 +40,9 @@ final class SignUpViewController: CoreViewController {
         }
     }
 
+    @IBAction func didTapForgotPassword(_ sender: Any) {
+        // Forgot Password 버튼 선택하면 콘솔에 로그 출력(로그 문구는 자유)
+    }
 }
 
 
@@ -69,7 +68,6 @@ extension SignUpViewController: UITextFieldDelegate {
 extension SignUpViewController: HaveAccountButtonDelegate {
 
     func haveAccountDidTapLoginButton(_ button: UIButton) {
-        // TODO: - Unwind Segue로 코드 수정
         dismiss(animated: true)
     }
 }

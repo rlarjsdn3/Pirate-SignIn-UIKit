@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uZL-8f-3sS">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -14,18 +14,18 @@
             <objects>
                 <viewController storyboardIdentifier="OnboardingViewController" id="Y6W-OH-hqX" customClass="OnboardingViewController" customModule="PirateSignIn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="steering-wheel" translatesAutoresizingMaskIntoConstraints="NO" id="fR3-tg-1MB">
-                                <rect key="frame" x="106.66666666666669" y="196" width="180" height="180"/>
+                                <rect key="frame" x="111" y="207" width="180" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="24v-kO-sM5"/>
                                     <constraint firstAttribute="width" constant="180" id="fXr-0M-BOX"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Grn-Mx-63v" customClass="PrimaryButton" customModule="PirateSignIn" customModuleProvider="target">
-                                <rect key="frame" x="24" y="551" width="345" height="50"/>
+                                <rect key="frame" x="24" y="562" width="354" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="912-Ne-ueg"/>
@@ -44,10 +44,11 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isEnabled" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9u-Q0-7W8" customClass="HaveAccountButton" customModule="PirateSignIn" customModuleProvider="target">
-                                <rect key="frame" x="58" y="616" width="277" height="15"/>
+                                <rect key="frame" x="58" y="627" width="286" height="15"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="RTv-g5-xrz"/>
@@ -67,7 +68,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eib-ja-WNk" customClass="SignInLabel" customModule="PirateSignIn" customModuleProvider="target">
-                                <rect key="frame" x="50" y="426" width="293" height="75"/>
+                                <rect key="frame" x="50" y="437" width="302" height="75"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="7k0-Jt-Gws"/>

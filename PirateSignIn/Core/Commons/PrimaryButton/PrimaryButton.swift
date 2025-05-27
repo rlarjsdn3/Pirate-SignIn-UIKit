@@ -44,7 +44,12 @@ final class PrimaryButton: NibView {
     @IBInspectable var cornerRadius: CGFloat = 0.0 {
         didSet { buttonConfiguration(\.background.cornerRadius, for: cornerRadius) }
     }
-    
+
+    /// 버튼의 활성화 여부를 나타냅니다.
+    @IBInspectable var isEnabled: Bool = true {
+        didSet { setEnabled(isEnabled) }
+    }
+
     /// 실제 동작을 수행하는 UIButton 아웃렛입니다.
     @IBOutlet var button: UIButton!
     
@@ -72,11 +77,25 @@ final class PrimaryButton: NibView {
 
 extension PrimaryButton {
     
+    /// 버튼의 활성화 상태에 따라 색상 및 투명도를 조정합니다.
+    /// - Parameter enabled: 활성화 여부를 나타내는 불리언 값입니다.
+    private func setEnabled(_ enabled: Bool) {
+        guard let button = button else { return }
+        button.apply {
+            $0.isEnabled = enabled
+            $0.withConfiguration(
+                \.baseBackgroundColor,
+                 for: enabled ? ._pirateBlue : .systemGray
+            )
+            $0.alpha = enabled ? 1 : 0.75
+        }
+    }
+
     /// UIButton.Configuration에 특정 값을 설정하는 헬퍼 메서드입니다.
     /// - Parameters:
     ///   - keyPath: 설정할 Configuration의 KeyPath입니다.
     ///   - value: 적용할 값입니다.
-    func buttonConfiguration<Value>(
+    private func buttonConfiguration<Value>(
         _ keyPath: WritableKeyPath<UIButton.Configuration, Value>,
         for value: Value
     ) {
@@ -87,7 +106,7 @@ extension PrimaryButton {
     /// 주어진 폰트 rawValue에 해당하는 UIFont로부터 NSAttributedString을 생성합니다.
     /// - Parameter rawValue: PirateFont의 정수값입니다.
     /// - Returns: 지정된 폰트가 적용된 AttributedString 객체입니다.
-    func attributedString(font rawValue: Int) -> AttributedString {
+    private func attributedString(font rawValue: Int) -> AttributedString {
         AttributedString(
             title ?? "",
             attributes: AttributeContainer(

@@ -13,7 +13,7 @@ final class LogoBackdropCircle: NibView {
 
     /// 표시할 이미지의 이름입니다. 설정 시 항상 `.alwaysTemplate` 렌더링 모드로 적용됩니다.
     var imageName: String = "" {
-        didSet { setImage(withAlwaysTemplate: imageName) }
+        didSet { imageView.setImage(withAlwaysTemplate: imageName) }
     }
 
     /// 이미지의 틴트 색상입니다. 버튼이나 상위 뷰의 `tintColor`에 따라 반응합니다.
@@ -55,10 +55,6 @@ final class LogoBackdropCircle: NibView {
             imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
-        imageView.apply {
-            $0.contentMode = .scaleAspectFit
-            $0.image = $0.image?.withRenderingMode(.alwaysTemplate)
-        }
 
         // TODO: - 이미지에 그림자 Layer 추가하기
     }
@@ -71,15 +67,6 @@ final class LogoBackdropCircle: NibView {
         super.layoutSubviews()
 
         backdropView.layer.cornerRadius = frame.height / 2
-    }
-}
-
-extension LogoBackdropCircle {
-
-    /// 주어진 이미지 이름을 통해 이미지를 설정하고 `.alwaysTemplate` 렌더링 모드로 지정합니다.
-    /// - Parameter name: Asset Catalog에 등록된 이미지 이름
-    func setImage(withAlwaysTemplate name: String) {
-        imageView.image = UIImage(named: name)?.withRenderingMode(.alwaysTemplate)
     }
 }
 

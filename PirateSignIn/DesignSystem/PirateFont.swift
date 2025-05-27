@@ -16,10 +16,13 @@ enum PirateFont: Int {
     /// 주요 버튼의 타이틀에 사용되는 폰
     case title2     = 1
     /// 텍스트 필드의 플레이스홀더에 사용되는 폰트
+    @available(*, deprecated)
     case title3     = 2
     /// 로그인 및 회원가입 화면의 타이틀에 사용되는 폰트
+    @available(*, deprecated)
     case headline   = 3
     /// 비밀번호 찾기 등 부가 텍스트에 사용되는 폰트
+    @available(*, deprecated)
     case footnote   = 4
     /// 기타 설명 등에 사용되는 캡션 폰트
     case caption    = 5

@@ -19,10 +19,6 @@ final class OnboardingViewController: CoreViewController {
         loginButton.delegate = self
     }
 
-    override func setupUI() {
-        super.setupUI()
-    }
-
     override func setupAttributes() {
         super.setupAttributes()
 
