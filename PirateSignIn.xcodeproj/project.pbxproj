@@ -6,7 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		C74851F02DE5D54000668F72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7C00DCF2DE177D500BA4266 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7C00DD62DE177D500BA4266;
+			remoteInfo = PirateSignIn;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		C74851EC2DE5D54000668F72 /* PirateSignInTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PirateSignInTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C74851F52DE5D6A000668F72 /* PirateSignIn.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = PirateSignIn.xctestplan; sourceTree = "<group>"; };
 		C7C00DD72DE177D500BA4266 /* PirateSignIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PirateSignIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -21,6 +33,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		C74851ED2DE5D54000668F72 /* PirateSignInTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PirateSignInTests;
+			sourceTree = "<group>";
+		};
 		C7C00DD92DE177D500BA4266 /* PirateSignIn */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -32,6 +49,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C74851E92DE5D54000668F72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C7C00DD42DE177D500BA4266 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,7 +69,9 @@
 		C7C00DCE2DE177D500BA4266 = {
 			isa = PBXGroup;
 			children = (
+				C74851F52DE5D6A000668F72 /* PirateSignIn.xctestplan */,
 				C7C00DD92DE177D500BA4266 /* PirateSignIn */,
+				C74851ED2DE5D54000668F72 /* PirateSignInTests */,
 				C7C00DD82DE177D500BA4266 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				C7C00DD72DE177D500BA4266 /* PirateSignIn.app */,
+				C74851EC2DE5D54000668F72 /* PirateSignInTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +88,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C74851EB2DE5D54000668F72 /* PirateSignInTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C74851F22DE5D54000668F72 /* Build configuration list for PBXNativeTarget "PirateSignInTests" */;
+			buildPhases = (
+				C74851E82DE5D54000668F72 /* Sources */,
+				C74851E92DE5D54000668F72 /* Frameworks */,
+				C74851EA2DE5D54000668F72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C74851F12DE5D54000668F72 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C74851ED2DE5D54000668F72 /* PirateSignInTests */,
+			);
+			name = PirateSignInTests;
+			packageProductDependencies = (
+			);
+			productName = PirateSignInTests;
+			productReference = C74851EC2DE5D54000668F72 /* PirateSignInTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C7C00DD62DE177D500BA4266 /* PirateSignIn */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7C00DEA2DE177D700BA4266 /* Build configuration list for PBXNativeTarget "PirateSignIn" */;
@@ -93,6 +143,10 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					C74851EB2DE5D54000668F72 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = C7C00DD62DE177D500BA4266;
+					};
 					C7C00DD62DE177D500BA4266 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -113,11 +167,19 @@
 			projectRoot = "";
 			targets = (
 				C7C00DD62DE177D500BA4266 /* PirateSignIn */,
+				C74851EB2DE5D54000668F72 /* PirateSignInTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C74851EA2DE5D54000668F72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C7C00DD52DE177D500BA4266 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -128,6 +190,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C74851E82DE5D54000668F72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C7C00DD32DE177D500BA4266 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,7 +206,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C74851F12DE5D54000668F72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7C00DD62DE177D500BA4266 /* PirateSignIn */;
+			targetProxy = C74851F02DE5D54000668F72 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		C74851F32DE5D54000668F72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4DQM269FVB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kimsowol.PirateSignInTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PirateSignIn.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PirateSignIn";
+			};
+			name = Debug;
+		};
+		C74851F42DE5D54000668F72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4DQM269FVB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kimsowol.PirateSignInTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PirateSignIn.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PirateSignIn";
+			};
+			name = Release;
+		};
 		C7C00DEB2DE177D700BA4266 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -324,6 +437,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C74851F22DE5D54000668F72 /* Build configuration list for PBXNativeTarget "PirateSignInTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C74851F32DE5D54000668F72 /* Debug */,
+				C74851F42DE5D54000668F72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C7C00DD22DE177D500BA4266 /* Build configuration list for PBXProject "PirateSignIn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -79,7 +79,7 @@ extension PrimaryButton {
     
     /// 버튼의 활성화 상태에 따라 색상 및 투명도를 조정합니다.
     /// - Parameter enabled: 활성화 여부를 나타내는 불리언 값입니다.
-    private func setEnabled(_ enabled: Bool) {
+    func setEnabled(_ enabled: Bool) {
         guard let button = button else { return }
         button.apply {
             $0.isEnabled = enabled

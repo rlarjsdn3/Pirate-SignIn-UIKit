@@ -41,7 +41,7 @@ final class SignUpViewController: CoreViewController {
     }
 
     @IBAction func didTapForgotPassword(_ sender: Any) {
-        // Forgot Password 버튼 선택하면 콘솔에 로그 출력(로그 문구는 자유)
+        print(#function)
     }
 }
 

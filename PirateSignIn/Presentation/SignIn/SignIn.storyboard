@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -61,7 +61,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nT-qV-7uA" customClass="OrConnectWithLabel" customModule="PirateSignIn" customModuleProvider="target">
-                                <rect key="frame" x="76.666666666666686" y="658.66666666666663" width="240" height="125.33333333333337"/>
+                                <rect key="frame" x="76.666666666666686" y="658.66666666666663" width="240" height="159.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="cng-2E-tM8"/>
@@ -135,6 +135,12 @@
                                     <action selector="didTapForgotPassword:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bKD-5K-90x"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sd9-9s-2GG">
+                                <rect key="frame" x="197" y="77" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -166,6 +172,7 @@
                         <outlet property="emailField" destination="qQa-qD-kwW" id="qDf-zA-3Lq"/>
                         <outlet property="haveAccountLabel" destination="F0g-Jl-tyk" id="Dw2-1B-gHQ"/>
                         <outlet property="imageView" destination="jVs-76-OeO" id="6kA-zK-MB7"/>
+                        <outlet property="logInButton" destination="YoM-us-qFI" id="5qS-c5-gks"/>
                         <outlet property="orConnectLabel" destination="8nT-qV-7uA" id="eoA-Pa-Q4C"/>
                         <outlet property="passwordField" destination="KAE-eZ-1zd" id="y4C-6P-vYs"/>
                         <segue destination="0b8-8j-BzO" kind="presentation" identifier="SignInToSignUp" modalPresentationStyle="fullScreen" id="83e-a7-zwe"/>

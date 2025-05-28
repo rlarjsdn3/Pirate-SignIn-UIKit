@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "954667F3-312B-48F6-AC94-D81517CA067D",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:PirateSignIn.xcodeproj",
+      "identifier" : "C7C00DD62DE177D500BA4266",
+      "name" : "PirateSignIn"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:PirateSignIn.xcodeproj",
+        "identifier" : "C74851EB2DE5D54000668F72",
+        "name" : "PirateSignInTests"
+      }
+    }
+  ],
+  "version" : 1
+}
