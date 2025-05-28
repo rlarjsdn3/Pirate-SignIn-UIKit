@@ -20,7 +20,8 @@ struct PirateSignInTests {
                 "firstname-lastname@example.com",
                 "niceandsimple@example.com",
                 "very.common@example.com",
-                "disposable.style.email.with+symbol@example.com"
+                "disposable.style.email.with+symbol@example.com",
+                "john.doe123@sub.example.co.uk"
             ]
         )
         func test_isValidEmailAddress_returnsTrue_forValidEmail(_ emailAddress: String) throws {
@@ -87,6 +88,7 @@ struct PirateSignInTests {
                 "ab!23",
                 "ABC!23",
                 "A!@#Z$",
+                "@aaAAAAA"
             ]
         )
         func test_isValidPassword_reurnFalse_forInValidPassword(_ password: String) {
