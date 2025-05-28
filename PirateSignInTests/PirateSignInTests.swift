@@ -9,7 +9,37 @@ import Testing
 @testable import PirateSignIn
 
 struct PirateSignInTests {
-    
+
+    struct NameValidationTests {
+
+        @Test(
+            arguments: [
+                "김진",
+                "김소월",
+                "김문어",
+                "흰둥이",
+                "시애틀",
+                "김예슬이",
+            ]
+        )
+        func test_isValidName_returnsTrue_forValidName(_ name: String) throws {
+            #expect(name.checkIsValidName == true)
+        }
+
+        @Test(
+            arguments: [
+                "",
+                "김 건우",
+                "춤추는코요테",
+                "John",
+                "John Appleseed"
+            ]
+        )
+        func test_isValidEmailAddress_returnFalse_forInvalidEmail(_ emailAddress: String) throws {
+            #expect(emailAddress.checkIsValidName == false)
+        }
+    }
+
     struct EmailAddressValidationTests {
         
         @Test(

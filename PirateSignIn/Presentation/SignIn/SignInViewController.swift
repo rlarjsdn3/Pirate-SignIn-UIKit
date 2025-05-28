@@ -16,10 +16,14 @@ final class SignInViewController: CoreViewController {
     @IBOutlet weak var logInButton: PrimaryButton!
     @IBOutlet weak var orConnectLabel: OrConnectWithLabel!
 
+    private var isValidPassword: Bool = false
+    private var isValidEmailAddress: Bool = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        becomeFirstResponderIfNeeded(emailField)
+        hideKeyboardWhenTappedAround()
+        becomeFirstResponderIfNeeded(emailField.inputField)
         emailField.inputField.delegate = self
         passwordField.inputField.delegate = self
         orConnectLabel.delegate = self
@@ -58,17 +62,7 @@ final class SignInViewController: CoreViewController {
             $0.delegate = self
         }
     }
-
-    private func becomeFirstResponderIfNeeded(_ textField: SignInTextField) {
-        if textField.inputField.canBecomeFirstResponder {
-            textField.inputField.becomeFirstResponder()
-        }
-    }
     
-    private func resignFirstResponderIfNeeded(_ textField: SignInTextField) {
-        textField.inputField.resignFirstResponder()
-    }
-
     @IBAction func didTapForgotPassword(_ sender: Any) {
         print(#function)
     }
@@ -81,7 +75,7 @@ final class SignInViewController: CoreViewController {
  - Log in 버튼을 터치하면 입력한 이메일과 비밀번호를 콘솔에 출력
  - SNS 로그인 버튼은 기능없이 배치만 구현
  - Forgot Password 버튼 선택하면 콘솔에 로그 출력(로그 문구는 자유)
- - Email이 올바른 포멧으로 입력되었고(@, . 기호 포함) 비밀번호가 아래와 같은 형식인 경우에만 Log In 버튼을 활성화
+ - Email이 올바른 포멧으로 입력되었고 비밀번호가 아래와 같은 형식인 경우에만 Log In 버튼을 활성화
      - 길이 : 6 ~ 20
      - 대소문자 하나 이상 포함
      - 숫자 하나 이상 포함
@@ -94,11 +88,13 @@ extension SignInViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case emailField.inputField:
-            becomeFirstResponderIfNeeded(passwordField)
+            becomeFirstResponderIfNeeded(passwordField.inputField)
             return true
         case passwordField.inputField:
-            primaryButtonDidTapped(logInButton) // 코드 다시 검토
-            resignFirstResponderIfNeeded(passwordField)
+            isValidEmailAddressAndPassword {
+                handleLogIn()
+                resignFirstResponderIfNeeded(passwordField.inputField)
+            }
             return true
         default:
             return true
@@ -110,7 +106,28 @@ extension SignInViewController: UITextFieldDelegate {
         shouldChangeCharactersIn range: NSRange,
         replacementString string: String
     ) -> Bool {
-        logInButton.setEnabled(true)
+        guard
+            let text = textField.text,
+            let range = Range(range, in: text) // 사용자가 변경(입력/삭제/치환) 중인 문자열의 범위
+        else { return false }
+
+        let newText = text.replacingCharacters(in: range, with: string)
+
+        switch textField {
+        case emailField.inputField:
+            isValidEmailAddress = newText.checkIsVaildEmailAddress
+        case passwordField.inputField:
+            isValidPassword = newText.checkIsValidPassword
+        default:
+            break
+        }
+
+        isValidEmailAddressAndPassword {
+            self.logInButton.setEnabled(true)
+        } isNotValid: {
+            self.logInButton.setEnabled(false)
+        }
+
         return true
     }
 }
@@ -118,10 +135,27 @@ extension SignInViewController: UITextFieldDelegate {
 extension SignInViewController: PrimaryButtonDelegate {
     
     func primaryButtonDidTapped(_ button: PrimaryButton) {
+        isValidEmailAddressAndPassword {
+            handleLogIn()
+        }
+    }
+
+    private func handleLogIn() {
         print(
-            "Email: \(emailField.inputField.text)",
+            "Email: \(emailField.inputField.text),",
             "Password: \(passwordField.inputField.text)"
         )
+    }
+
+    private func isValidEmailAddressAndPassword(
+        _ isValid: () -> Void,
+        isNotValid: (() -> Void)? = nil
+    ) {
+        if isValidEmailAddress && isValidPassword {
+            isValid()
+        } else {
+            isNotValid?()
+        }
     }
 }
 

@@ -176,6 +176,7 @@
                         <outlet property="emailField" destination="3j9-ZO-kqp" id="NWp-Ao-CwN"/>
                         <outlet property="haveAccountLabel" destination="Pu9-Wt-n27" id="5MN-gi-Uux"/>
                         <outlet property="imageView" destination="BFk-7g-nnZ" id="6Yh-CD-e45"/>
+                        <outlet property="logInButton" destination="TH0-uZ-mVd" id="2uZ-N3-EXE"/>
                         <outlet property="nameField" destination="Fyt-vN-cEJ" id="VGf-Vm-9hM"/>
                         <outlet property="passwordField" destination="9kQ-DU-mji" id="GDf-dX-qBd"/>
                     </connections>

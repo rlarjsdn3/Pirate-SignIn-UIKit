@@ -8,7 +8,19 @@
 import Foundation
 
 extension String {
-    
+
+    /// 정규 표현식을 사용하여 문자열이 유효한 이름인지 판단합니다.
+    ///
+    /// 유효한 이름의 조건은 다음과 같습니다:
+    /// - 길이는 2자 이상 5자 이하입니다.
+    /// - 공백 없이 연속된 문자여야 합니다.
+    /// - 한글만 허용되며, 영문자, 숫자, 특수문자 등은 매칭되지 않습니다.
+    ///
+    var checkIsValidName: Bool {
+        let pattern = #"^[가-힣]{2,5}$"#
+        return patternWholeMatching(self, pattern: pattern)
+    }
+
     /// 정규 표현식을 사용하여 문자열이 유효한 이메일 주소인지 판단합니다.
     ///
     /// 유효한 이메일 주소가 되기 위해서는 다음 조건을 모두 충족해야 합니다:
