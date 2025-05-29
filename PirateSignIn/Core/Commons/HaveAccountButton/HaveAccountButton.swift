@@ -9,7 +9,8 @@ import UIKit
 
 protocol HaveAccountButtonDelegate: AnyObject {
 
-    ///
+    /// 로그인 버튼이 탭되었을 때 호출됩니다.
+    /// - Parameter button: 탭된 로그인 버튼 인스턴스입니다.
     func haveAccountDidTapLoginButton(_ button: UIButton)
 }
 

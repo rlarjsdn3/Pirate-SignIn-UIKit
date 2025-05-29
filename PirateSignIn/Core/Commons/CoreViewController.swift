@@ -9,7 +9,7 @@ import UIKit
 
 /// 공통 UI 구성 로직과 속성 설정을 제공하는 UIViewController의 기반 클래스입니다.
 /// `StoryboardInstantiable`을 채택하여 스토리보드로부터 초기 뷰 컨트롤러를 쉽게 인스턴스화할 수 있습니다.
-class CoreViewController: UIViewController, StoryboardInstantiable {
+class CoreViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

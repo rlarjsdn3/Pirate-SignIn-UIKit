@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 /// 소셜 로그인 버튼 등에 사용되는 원형 배경 이미지 뷰입니다.
 /// 배경 색상과 이미지의 틴트 색을 설정할 수 있으며, 가운데 이미지가 중심 정렬되고 크기가 조절됩니다.
 @IBDesignable
@@ -55,8 +56,6 @@ final class LogoBackdropCircle: NibView {
             imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
-
-        // TODO: - 이미지에 그림자 Layer 추가하기
     }
 
     required init?(coder: NSCoder) {
