@@ -153,7 +153,6 @@
                         <constraints>
                             <constraint firstItem="iuN-LP-Z1b" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="2AC-hA-Tpu"/>
                             <constraint firstItem="htM-ij-x6h" firstAttribute="top" secondItem="iKH-3d-ypW" secondAttribute="bottom" constant="40" id="69n-ao-krB"/>
-                            <constraint firstItem="AJV-hx-8AU" firstAttribute="top" secondItem="cJE-ru-cth" secondAttribute="bottom" priority="750" constant="20" id="6hc-nT-EoU"/>
                             <constraint firstItem="Pu9-Wt-n27" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="58" id="Ihp-TP-JT5"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TH0-uZ-mVd" secondAttribute="trailing" constant="48" id="LFo-Wr-Gx3"/>
                             <constraint firstItem="iKH-3d-ypW" firstAttribute="top" secondItem="BFk-7g-nnZ" secondAttribute="bottom" constant="45" id="Nvl-Lz-kZN"/>
@@ -175,12 +174,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="centerYConstraint" destination="hMc-Q1-Fed" id="k7k-4t-Dky"/>
                         <outlet property="emailField" destination="3j9-ZO-kqp" id="NWp-Ao-CwN"/>
-                        <outlet property="forgotPasswordBottomConstraint" destination="grG-cg-MG1" id="u8F-1A-ct8"/>
                         <outlet property="forgotPasswordButton" destination="cJE-ru-cth" id="WK3-8Q-cU1"/>
                         <outlet property="haveAccountLabel" destination="Pu9-Wt-n27" id="5MN-gi-Uux"/>
                         <outlet property="imageView" destination="BFk-7g-nnZ" id="6Yh-CD-e45"/>
-                        <outlet property="keyboardLayoutConstraint" destination="6hc-nT-EoU" id="v8E-3D-dmb"/>
                         <outlet property="logInButton" destination="TH0-uZ-mVd" id="2uZ-N3-EXE"/>
                         <outlet property="nameField" destination="Fyt-vN-cEJ" id="VGf-Vm-9hM"/>
                         <outlet property="orConnectLabel" destination="iuN-LP-Z1b" id="cGb-hu-Ogx"/>

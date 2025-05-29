@@ -18,9 +18,8 @@ final class SignUpViewController: CoreViewController {
     @IBOutlet weak var haveAccountLabel: HaveAccountButton!
     @IBOutlet weak var orConnectLabel: OrConnectWithLabel!
 
-    @IBOutlet weak var forgotPasswordBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var keyboardLayoutConstraint: NSLayoutConstraint!
-
+    @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
+    
     private var isValidName: Bool = false
     private var isValidPassword: Bool = false
     private var isValidEmailAddress: Bool = false
@@ -165,23 +164,18 @@ final class SignUpViewController: CoreViewController {
         let keyboardHeightFromBottom = keyboardFrame.height
         let forgotPasswordButtonHeightFromBottom = view.frame.height - forgotPasswordButton.frame.maxY
 
-        print(
-            "keyboard:", keyboardHeightFromBottom,
-            "button:", forgotPasswordButtonHeightFromBottom
-        )
-
         if show {
             // 키보드가 버튼을 가릴 경우에만 버튼을 올림 (iPhone 16 Pro Max에서 올리지 않음)
             if keyboardHeightFromBottom > forgotPasswordButtonHeightFromBottom {
-                forgotPasswordBottomConstraint.constant = 50
+                centerYConstraint.constant = 120
             } else {
-                // 이미 키보드가 올라와 있으면 무시
+                // 이미 키보드가 올라와 있으면 무시 (텍스트필드가 바뀔 때, 짧게 뷰가 이동하는 현상 방지)
                 if isShowKeyboard { return }
-                forgotPasswordBottomConstraint.constant = 20
+                centerYConstraint.constant = 150
             }
         } else {
             // 키보드가 사라졌을 때는 항상 원래 위치로 복귀
-            forgotPasswordBottomConstraint.constant = 20
+            centerYConstraint.constant = 150
         }
 
         // 키보드 보기 상태 갱신
@@ -206,8 +200,8 @@ extension SignUpViewController: UITextFieldDelegate {
         case passwordField.inputField:
             isValidEmailAddressPasswordAndName {
                 handleLogIn()
+                resignFirstResponderIfNeeded(passwordField.inputField)
             }
-            resignFirstResponderIfNeeded(passwordField.inputField)
             return true
         default:
             return true

@@ -164,8 +164,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="centerYConstraint" destination="bPj-8h-ncM" id="0ia-op-p19"/>
                         <outlet property="emailField" destination="qQa-qD-kwW" id="qDf-zA-3Lq"/>
-                        <outlet property="forgotPasswordBottomConstraint" destination="ZQ1-z4-NfN" id="nM5-vj-SJr"/>
                         <outlet property="forgotPasswordButton" destination="99f-E7-GGf" id="Ebf-D3-Uqo"/>
                         <outlet property="haveAccountLabel" destination="F0g-Jl-tyk" id="Dw2-1B-gHQ"/>
                         <outlet property="imageView" destination="jVs-76-OeO" id="6kA-zK-MB7"/>
