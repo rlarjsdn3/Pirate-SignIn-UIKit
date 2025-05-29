@@ -18,7 +18,7 @@ final class SignInLabel: NibView {
     
     /// 타이틀에 적용할 PirateFont의 rawValue입니다.
     @IBInspectable var titleFont: Int = 0 {
-        didSet { titleLabel.font = PirateFont.get(titleFont) }
+        didSet { titleLabel.font = SignInFont.get(titleFont) }
     }
     
     /// 타이틀 텍스트의 색상입니다.
@@ -33,7 +33,7 @@ final class SignInLabel: NibView {
     
     /// 설명에 적용할 PirateFont의 rawValue입니다.
     @IBInspectable var descriptionFont: Int = 0 {
-        didSet { descriptionLabel.font = PirateFont.get(descriptionFont) }
+        didSet { descriptionLabel.font = SignInFont.get(descriptionFont) }
     }
     
     /// 설명 텍스트의 색상입니다.

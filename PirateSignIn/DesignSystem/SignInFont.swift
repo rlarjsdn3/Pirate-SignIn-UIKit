@@ -1,5 +1,5 @@
 //
-//  PirateFont.swift
+//  SignInFont.swift
 //  PirateSignIn
 //
 //  Created by 김건우 on 5/25/25.
@@ -9,7 +9,7 @@ import UIKit
 
 /// 앱에서 사용되는 공통 폰트를 정의하는 열거형입니다.
 /// 각 케이스는 특정 UI 구성요소에 대응하는 폰트 스타일을 나타냅니다.
-enum PirateFont: Int {
+enum SignInFont: Int {
     
     /// 온보딩 화면의 타이틀에 사용되는 폰트
     case title      = 0
@@ -46,9 +46,9 @@ enum PirateFont: Int {
     /// - Parameter rawValue: `PirateFont` 케이스의 정수값입니다.
     /// - Returns: 해당 케이스의 `UIFont`를 반환하며, 유효하지 않은 값일 경우 기본값인 `.title`의 폰트를 반환합니다.
     static func get(_ rawValue: Int) -> UIFont {
-        if let font = PirateFont(rawValue: rawValue) {
+        if let font = SignInFont(rawValue: rawValue) {
             return font.fount
         }
-        return PirateFont.title.fount
+        return SignInFont.title.fount
     }
 }

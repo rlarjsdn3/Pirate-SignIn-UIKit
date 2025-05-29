@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="height" constant="50" id="gY8-77-24J"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Log in"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Log In"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="titleFont">
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
@@ -61,21 +61,21 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nT-qV-7uA" customClass="OrConnectWithLabel" customModule="PirateSignIn" customModuleProvider="target">
-                                <rect key="frame" x="76.666666666666686" y="658.66666666666663" width="240" height="159.33333333333337"/>
+                                <rect key="frame" x="76.666666666666686" y="658.66666666666663" width="240" height="125.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="cng-2E-tM8"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="steering-wheel" translatesAutoresizingMaskIntoConstraints="NO" id="jVs-76-OeO">
-                                <rect key="frame" x="156.66666666666666" y="147" width="80" height="80"/>
+                                <rect key="frame" x="156.66666666666666" y="148" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="dPE-57-7pf"/>
                                     <constraint firstAttribute="width" constant="80" id="xxL-UV-Vu3"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xU7-Ej-8Ug" customClass="SignInLabel" customModule="PirateSignIn" customModuleProvider="target">
-                                <rect key="frame" x="48" y="302" width="297" height="45"/>
+                                <rect key="frame" x="48" y="298" width="297" height="45"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="dCt-Jx-Xib"/>
@@ -94,8 +94,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="clZ-Qf-EEF">
-                                <rect key="frame" x="48" y="387" width="297" height="107"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="clZ-Qf-EEF">
+                                <rect key="frame" x="48" y="383" width="297" height="111"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQa-qD-kwW" customClass="SignInTextField" customModule="PirateSignIn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="297" height="47.666666666666664"/>
@@ -109,7 +109,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAE-eZ-1zd" customClass="SignInTextField" customModule="PirateSignIn" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="59.666666666666686" width="297" height="47.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="63.666666666666686" width="297" height="47.333333333333343"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47.5" id="p8b-8s-cfQ"/>
@@ -135,14 +135,9 @@
                                     <action selector="didTapForgotPassword:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bKD-5K-90x"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sd9-9s-2GG">
-                                <rect key="frame" x="197" y="77" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <keyboardLayoutGuide key="keyboard" id="Q1t-H7-jZR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8nT-qV-7uA" firstAttribute="top" secondItem="F0g-Jl-tyk" secondAttribute="bottom" constant="27.5" id="3bJ-Q2-hfm"/>
@@ -163,13 +158,15 @@
                             <constraint firstItem="F0g-Jl-tyk" firstAttribute="top" secondItem="YoM-us-qFI" secondAttribute="bottom" constant="15" id="XcW-ed-J3R"/>
                             <constraint firstItem="YoM-us-qFI" firstAttribute="top" secondItem="99f-E7-GGf" secondAttribute="bottom" constant="20" id="ZQ1-z4-NfN"/>
                             <constraint firstItem="YoM-us-qFI" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="150" id="bPj-8h-ncM"/>
-                            <constraint firstItem="xU7-Ej-8Ug" firstAttribute="top" secondItem="jVs-76-OeO" secondAttribute="bottom" constant="75" id="qjV-r6-alc"/>
+                            <constraint firstItem="xU7-Ej-8Ug" firstAttribute="top" secondItem="jVs-76-OeO" secondAttribute="bottom" constant="70" id="qjV-r6-alc"/>
                             <constraint firstItem="clZ-Qf-EEF" firstAttribute="leading" secondItem="YoM-us-qFI" secondAttribute="leading" id="sCG-Pt-Rdb"/>
                             <constraint firstItem="99f-E7-GGf" firstAttribute="top" secondItem="clZ-Qf-EEF" secondAttribute="bottom" constant="8" symbolic="YES" id="sPB-dv-V1U"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailField" destination="qQa-qD-kwW" id="qDf-zA-3Lq"/>
+                        <outlet property="forgotPasswordBottomConstraint" destination="ZQ1-z4-NfN" id="nM5-vj-SJr"/>
+                        <outlet property="forgotPasswordButton" destination="99f-E7-GGf" id="Ebf-D3-Uqo"/>
                         <outlet property="haveAccountLabel" destination="F0g-Jl-tyk" id="Dw2-1B-gHQ"/>
                         <outlet property="imageView" destination="jVs-76-OeO" id="6kA-zK-MB7"/>
                         <outlet property="logInButton" destination="YoM-us-qFI" id="5qS-c5-gks"/>
@@ -196,7 +193,7 @@
     <resources>
         <image name="steering-wheel" width="256" height="256"/>
         <namedColor name="PirateBlue">
-            <color red="0.030999999493360519" green="0.22699999809265137" blue="0.49799999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.11764705882352941" green="0.29803921568627451" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

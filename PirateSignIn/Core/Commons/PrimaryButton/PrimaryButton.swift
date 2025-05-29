@@ -110,7 +110,7 @@ extension PrimaryButton {
         AttributedString(
             title ?? "",
             attributes: AttributeContainer(
-                [.font: PirateFont.get(rawValue)]
+                [.font: SignInFont.get(rawValue)]
             )
         )
     }

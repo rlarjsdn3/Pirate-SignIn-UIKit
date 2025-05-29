@@ -61,7 +61,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                         <color key="value" systemColor="labelColor"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="Log in"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="Log In"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonTitleFont">
                                         <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
@@ -149,7 +149,7 @@
     <resources>
         <image name="steering-wheel" width="256" height="256"/>
         <namedColor name="PirateBlue">
-            <color red="0.030999999493360519" green="0.22699999809265137" blue="0.49799999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.11764705882352941" green="0.29803921568627451" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

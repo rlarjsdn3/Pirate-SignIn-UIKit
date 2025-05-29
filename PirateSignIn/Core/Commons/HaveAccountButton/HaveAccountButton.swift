@@ -26,7 +26,7 @@ final class HaveAccountButton: NibView {
     
     /// 설명 라벨에 적용할 PirateFont의 rawValue입니다.
     @IBInspectable var titleFont: Int = 0 {
-        didSet { descriptionLabel.font = PirateFont.get(titleFont) }
+        didSet { descriptionLabel.font = SignInFont.get(titleFont) }
     }
     
     /// 설명 라벨의 텍스트 색상입니다.
@@ -44,7 +44,7 @@ final class HaveAccountButton: NibView {
     @IBInspectable var buttonTitleFont: Int = 0 {
         didSet {
             // 폰트가 제대로 적용되지 않을 경우, NSAttributedString 방식으로 설정하는 것을 권장합니다.
-            signInButton.titleLabel?.font = PirateFont(rawValue: buttonTitleFont)?.fount
+            signInButton.titleLabel?.font = SignInFont(rawValue: buttonTitleFont)?.fount
         }
     }
     

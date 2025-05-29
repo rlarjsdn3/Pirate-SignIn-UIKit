@@ -47,7 +47,7 @@ final class SignInTextField: NibView {
         }
 
         inputField.apply {
-            $0.textColor = .systemGray
+            $0.textColor = .label
             $0.tintColor = .systemGray
         }
     }

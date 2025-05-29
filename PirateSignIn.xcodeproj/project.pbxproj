@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C79AA4842DE8C8D7009F7D33 /* CheckList.txt in Resources */ = {isa = PBXBuildFile; fileRef = C79AA4832DE8C8D7009F7D33 /* CheckList.txt */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		C74851F02DE5D54000668F72 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -19,6 +23,7 @@
 /* Begin PBXFileReference section */
 		C74851EC2DE5D54000668F72 /* PirateSignInTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PirateSignInTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74851F52DE5D6A000668F72 /* PirateSignIn.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = PirateSignIn.xctestplan; sourceTree = "<group>"; };
+		C79AA4832DE8C8D7009F7D33 /* CheckList.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CheckList.txt; sourceTree = "<group>"; };
 		C7C00DD72DE177D500BA4266 /* PirateSignIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PirateSignIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -69,6 +74,7 @@
 		C7C00DCE2DE177D500BA4266 = {
 			isa = PBXGroup;
 			children = (
+				C79AA4832DE8C8D7009F7D33 /* CheckList.txt */,
 				C74851F52DE5D6A000668F72 /* PirateSignIn.xctestplan */,
 				C7C00DD92DE177D500BA4266 /* PirateSignIn */,
 				C74851ED2DE5D54000668F72 /* PirateSignInTests */,
@@ -184,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C79AA4842DE8C8D7009F7D33 /* CheckList.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

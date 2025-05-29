@@ -20,6 +20,7 @@ struct PirateSignInTests {
                 "흰둥이",
                 "시애틀",
                 "김예슬이",
+                "John",
             ]
         )
         func test_isValidName_returnsTrue_forValidName(_ name: String) throws {
@@ -31,7 +32,6 @@ struct PirateSignInTests {
                 "",
                 "김 건우",
                 "춤추는코요테",
-                "John",
                 "John Appleseed"
             ]
         )
