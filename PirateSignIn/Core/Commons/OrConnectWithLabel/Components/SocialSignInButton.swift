@@ -82,7 +82,7 @@ extension SocialSignInButton {
     }
 }
 
-#Preview {
+#Preview(traits: .fixedLayout(width: 100, height: 100)) {
     let button = SocialSignInButton(
         frame: .init(x: 0, y: 0, width: 100, height: 100)
     )

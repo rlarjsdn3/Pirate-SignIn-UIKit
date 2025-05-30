@@ -22,14 +22,18 @@ final class LogoBackdropCircle: NibView {
         didSet { imageView.tintColor = tintColor }
     }
 
-    /// 배경에 그림자나 장식 효과를 추가할 때 사용할 `CAShapeLayer`입니다.
-    private var shadowLayer: CAShapeLayer? = nil
+    /// 배경에 그림자나 장식 효과를 추가할 때 사용하는 뷰입니다.
+    private let shadowView = UIView()
 
     /// 이미지가 포함될 배경 뷰입니다. 기본적으로 원형이고 밝은 파란색 배경이 적용됩니다.
-    let backdropView = UIView()
+    private let backdropView = UIView()
 
     /// 가운데 표시되는 이미지 뷰입니다.
-    let imageView = UIImageView()
+    private let imageView = UIImageView()
+
+    private var centerXConstraint: NSLayoutConstraint?
+    private var centerYConstraint: NSLayoutConstraint?
+
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,9 +47,25 @@ final class LogoBackdropCircle: NibView {
             backdropView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
         backdropView.apply {
-            $0.layer.cornerRadius = frame.height / 2
             $0.layer.masksToBounds = true
             $0.backgroundColor = ._pirateLightBlue
+        }
+
+        backdropView.addSubview(shadowView)
+        shadowView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            shadowView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.75),
+            shadowView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.75),
+        ])
+        centerXConstraint = shadowView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0)
+        centerXConstraint?.isActive = true
+        centerYConstraint = shadowView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0)
+        centerYConstraint?.isActive = true
+
+        shadowView.apply {
+            $0.layer.opacity = 0.33
+            $0.layer.masksToBounds = true
+            $0.backgroundColor = ._pirateDarkBlue
         }
 
         backdropView.addSubview(imageView)
@@ -65,20 +85,19 @@ final class LogoBackdropCircle: NibView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
+        shadowView.layer.cornerRadius = (frame.height / 2) * 0.75
         backdropView.layer.cornerRadius = frame.height / 2
+
+        centerXConstraint?.constant = frame.width * 0.31
+        centerYConstraint?.constant = frame.height * 0.11
     }
 }
 
 
-#Preview(traits: .fixedLayout(width: 100, height: 100)) {
-    let logo = LogoBackdropCircle(
-        frame: .init(
-            x: 0, y: 0,
-            width: 100,
-            height: 100
-        )
-    )
-    logo.imageName = "facebook"
-    logo.tintColor = .systemBackground
+#Preview(traits: .fixedLayout(width: 122, height: 122)) {
+    let logo = LogoBackdropCircle().apply {
+        $0.imageName = "facebook"
+        $0.tintColor = .systemBackground
+    }
     return logo
 }
